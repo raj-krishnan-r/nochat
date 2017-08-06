@@ -18,7 +18,8 @@ import java.util.List;
 class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
 
     private TextView chatText;
-    private TextView dateandtime;
+    private TextView dateadtime;
+    private TextView deliverystatus;
     private List<ChatMessage> chatMessageList = new ArrayList<ChatMessage>();
     private Context context;
 
@@ -27,6 +28,13 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
         chatMessageList.add(object);
         super.add(object);
     }
+
+    public void refresh(int post)
+    {
+        chatMessageList.get(post).setDeliveryStatus("Tick");
+
+    }
+
 
     public ChatArrayAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
@@ -39,8 +47,8 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
 
     public ChatMessage getItem(int index) {
         return this.chatMessageList.get(index);
-    }
 
+    }
     public View getView(int position, View convertView, ViewGroup parent) {
         ChatMessage chatMessageObj = getItem(position);
         View row = convertView;
@@ -51,9 +59,11 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
             row = inflater.inflate(R.layout.left, parent, false);
         }
         chatText = (TextView) row.findViewById(R.id.msgr);
-        dateandtime = (TextView) row.findViewById(R.id.datetimeview);
-        long unixTime = System.currentTimeMillis() / 1000L;
-        dateandtime.setText(epochTo(String.valueOf(unixTime)));
+        deliverystatus = (TextView) row.findViewById(R.id.deliverystatus);
+        dateadtime = (TextView) row.findViewById(R.id.datetimeview);
+
+        deliverystatus.setText("");
+        dateadtime.setText(epochTo(String.valueOf(chatMessageObj.timestmp)));
         chatText.setText(chatMessageObj.message);
         return row;
     }

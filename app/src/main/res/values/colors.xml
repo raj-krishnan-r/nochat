@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#02822a</color>
     <color name="colorPrimaryDark">#306f9f</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FF4081</color>k
     <color name="incomingMessage">#f5794db3</color>
     <color name="outgoingMessage">#f55c4db3</color>
+    <color name="msgtime">#d43f6c2e</color>
+    <color name="msgbackincoming">#883bb64b</color>
+    <color name="msgbackoutgoing">#ffff</color>
 
 </resources>

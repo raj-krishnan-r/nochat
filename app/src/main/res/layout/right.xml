@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/message"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
     <TextView
@@ -16,15 +18,18 @@
         android:paddingRight="10dp"
         android:paddingTop="5dp"
         android:background="@drawable/textview"
-        android:textSize="25dp"
+        android:textSize="15dp"
 
         android:text="Sample"
-        android:textColor="@color/incomingMessage" />
+        android:textColor="@color/outgoingMessage" />
 
     <TextView
         android:id="@+id/datetimeview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="00:00:00"
+        android:gravity="left"
+        android:textColor="@color/msgtime"
+        android:textSize="10dp"
         android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle" />
 </LinearLayout>

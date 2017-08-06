@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Notes Socket Test </string>
+    <string name="ontransittoserver">\!</string>
+    <string name="atserver">f</string>
 </resources>

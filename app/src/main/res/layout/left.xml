@@ -1,11 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/message"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:layout_margin="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/msgr"
@@ -21,16 +30,36 @@
             android:paddingTop="5dp"
             android:text="Sampleleft"
             android:textColor="@color/outgoingMessage"
+            android:textSize="15dp" />
 
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/datetimeview"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="00:00:00"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/deliverystatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/msgtime"
+                android:padding="2dp"
+
+                tools:text="@string/ontransittoserver" />
+
+            <TextView
+                android:id="@+id/datetimeview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:padding="1dp"
+                android:color="@color/msgtime"
+                android:text="00:00:00"
+
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                android:textColor="@color/msgtime"
+                android:textSize="10dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
